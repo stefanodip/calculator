@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+    <title> Calculator </title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+function n(op)
+{
+if(document.getElementById("risultato").value=="0" || document.getElementById("risultato").value==null)
+{document.getElementById("risultato").value=op;}
+else{document.getElementById("risultato").value+=op;}
+}
+
+function risultato() { document.getElementById("risultato").value=eval(document.getElementById("risultato").value); }
+
+function cancella() { document.getElementById("risultato").value=document.getElementById("risultato").value.substring(0, document.getElementById("risultato").value.length-1); }
+function azzera() { document.getElementById("risultato").value="0"; }
+</script>
+</head>
+<body>
+
+	<nav class="navbar navbar-inverse">
+	
+		<div class="container-fluid">
+		
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">Calculator</a>
+			</div>
+		</div>
+	</nav>
+	
+<br><br>
+<div class="container-fluid">
+	<div class="row">
+ <form class="form-horizontal"></form>
+    <div class="col-md-4">
+      <input type="text" class="form-control" value="0" id="risultato" readonly="readonly">
+    </div>
+  </div>
+  </div>
+ <div class="container-fluid">
+	<div class="row">
+    		<div class="col-md-4">
+    			<div class="btn-group btn-group-justified">
+				 <a class="btn btn-lg btn-default btn-primary" OnClick="cancella()">C</a>
+				 <a class="btn btn-lg btn-default btn-primary" OnClick="azzera();">AZZERA</a>
+    			</div>
+			</div>
+    </div>
+ <div class="container-fluid">
+	<div class="row">
+    		<div class="col-md-4">
+    			<div class="btn-group btn-group-justified">
+					<a class="btn btn-lg btn-default" id="7" OnClick="n(this.id)">7</a>
+					<a class="btn btn-lg btn-default" id="8" OnClick="n(this.id)">8</a>
+					<a class="btn btn-lg btn-default" id="9" OnClick="n(this.id)">9</a>
+					<a class="btn btn-lg btn-default btn-warning" id="*" OnClick="n(this.id)">x</a>
+    			</div>
+    	</div>
+    </div>
+        		<div class="row">
+    		<div class="col-md-4">
+    			<div class="btn-group btn-group-justified">
+					<a class="btn btn-lg btn-default" id="4" OnClick="n(this.id)">4</a>
+					<a class="btn btn-lg btn-default" id="5" OnClick="n(this.id)">5</a>
+					<a class="btn btn-lg btn-default" id="6" OnClick="n(this.id)">6</a>
+					<a class="btn btn-lg btn-default btn-warning" id="+" OnClick="n(this.id)">+</a>
+    			</div>
+    		</div>
+    	</div>
+        		<div class="row">
+    		<div class="col-md-4">
+    			<div class="btn-group btn-group-justified">
+					<a class="btn btn-lg btn-default" id="1" OnClick="n(this.id)">1</a>
+					<a class="btn btn-lg btn-default" id="2" OnClick="n(this.id)">2</a>
+					<a class="btn btn-lg btn-default" id="3" OnClick="n(this.id)">3</a>
+					<a class="btn btn-lg btn-default btn-warning" id="-" OnClick="n(this.id)">-</a>
+    			</div>
+    		</div>
+    	</div>
+        		<div class="row">
+    		<div class="col-md-4">
+    			<div class="btn-group btn-group-justified">
+					<a class="btn btn-lg btn-default" id="0" OnClick="n(this.id)">0</a>
+					<a class="btn btn-lg btn-default" id="." OnClick="n(this.id)">.</a>
+					<a class="btn btn-lg btn-default" id="=" OnClick="risultato();">=</a>
+                    <a class="btn btn-lg btn-default btn-warning" id="/" OnClick="n(this.id)">/</a>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+</div>
+</body>
+</html>
